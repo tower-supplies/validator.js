@@ -1,8 +1,8 @@
 {
-  "name": "@openticket/lib-validatorjs",
+  "name": "@tower-supplies/validatorjs",
   "description": "Validation library inspired by Laravel's Validator",
-  "version": "5.1.0",
-  "author": "OpenTicket <dev@openticket.tech>",
+  "version": "5.1.1",
+  "author": "Adrian Stokes <adrian.stokes@towersupplies.com>",
   "contributors": [
     {
       "name": "Mike Erickson",
@@ -19,6 +19,10 @@
     {
       "name": "OpenTicket.tech",
       "email": "dev@openticket.tech"
+    },
+    {
+      "name": "Adrian Stokes",
+      "email": "adrian.stokes@towersupplies.com"
     }
   ],
   "license": "MIT",
@@ -32,10 +36,10 @@
   "types": "./src/types.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/opentickettech/openticket-lib-validatorjs"
+    "url": "https://github.com/tower-supplies/validatorjs"
   },
   "bugs": {
-    "url": "https://github.com/opentickettech/openticket-lib-validatorjs/issues"
+    "url": "https://github.com/tower-supplies/validatorjs/issues"
   },
   "keywords": [
     "codedungeon",

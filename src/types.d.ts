@@ -102,5 +102,5 @@ declare namespace Validator {
 }
 
 declare const Validator: Validator.ValidatorStatic;
-export = Validator;
 export as namespace Validator;
+export default Validator;

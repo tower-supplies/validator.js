@@ -1,18 +1,19 @@
 > ## About this fork
 > During the use of the original package we encountered unfixed bugs; behavioral quirks and use-cases we would like to 
-> align while integrating it in our OpenTicket ecosystem. Forking-and-tweaking it seemed the right thing to do.
+> align while integrating it in our ecosystem. Forking-and-tweaking it seemed the right thing to do.
 >
 > To give an overview on our main changes:
 > * We fixed some minor bugs on date-related rules
 > * We integrated Vite & Vitest, and aligned all existing tests
 > * We replaced the original default EN-lang with a generic slug-based approach 
+> * We updated the package dependencies and changed the export style
 
-# validatorjs
+# validator.js
 
-The validatorjs library makes data validation in JavaScript very easy in both the browser and Node.js.
+The validator.js library makes data validation in JavaScript very easy in both the browser and Node.js.
 This library was inspired by the [Laravel framework's Validator](http://laravel.com/docs/validation).
 
-## Why use validatorjs?
+## Why use validator.js?
 
 * Works in both the browser and Node.
 * Readable and declarative validation rules.
@@ -25,13 +26,13 @@ This library was inspired by the [Laravel framework's Validator](http://laravel.
 ### Using npm
 
 ```bash
-npm install validatorjs
+npm install @tower-supplies/validator.js
 ```
 
 ### Using yarn
 
 ```bash
-yarn add validatorjs
+yarn add @tower-supplies/validator.js
 ```
 
 ### Browser
@@ -44,12 +45,12 @@ yarn add validatorjs
 
 ```js
 // ES5
-let Validator = require('validatorjs');
+let Validator = require('@tower-supplies/validator.js');
 ```
 
 ```js
 // ES6
-import * as Validator from 'validatorjs';
+import Validator from '@tower-supplies/validator.js';
 ```
 
 ### Basic Usage

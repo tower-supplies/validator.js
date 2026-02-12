@@ -1,5 +1,5 @@
 {
-  "name": "@tower-supplies/validatorjs",
+  "name": "@tower-supplies/validator.js",
   "description": "Validation library inspired by Laravel's Validator",
   "version": "5.1.1",
   "author": "Adrian Stokes <adrian.stokes@towersupplies.com>",
@@ -36,10 +36,10 @@
   "types": "./src/types.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tower-supplies/validatorjs"
+    "url": "https://github.com/tower-supplies/validator.js"
   },
   "bugs": {
-    "url": "https://github.com/tower-supplies/validatorjs/issues"
+    "url": "https://github.com/tower-supplies/validator.js/issues"
   },
   "keywords": [
     "codedungeon",

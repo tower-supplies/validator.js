@@ -101,6 +101,24 @@ declare namespace Validator {
     }
 }
 
+declare const TypeCheckingRule: Validator.TypeCheckingRule;
+declare const Rules: Validator.Rules;
+declare const ValidationError: Validator.ValidationError;
+declare const ValidationErrors: Validator.ValidationErrors;
+declare const ErrorMessages: Validator.ErrorMessages;
+declare const AttributeNames: Validator.AttributeNames;
+declare const Errors: Validator.Errors;
 declare const Validator: Validator.ValidatorStatic;
+export {
+  TypeCheckingRule,
+  Rules,
+  ValidationError,
+  ValidationErrors,
+  ErrorMessages,
+  AttributeNames,
+  Errors,
+  Validator,
+};
+
 export as namespace Validator;
 export default Validator;

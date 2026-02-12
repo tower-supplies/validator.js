@@ -1,4 +1,3 @@
-
 // https://docs.microsoft.com/en-us/office/troubleshoot/excel/determine-a-leap-year
 function leapYear(year) {
   return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
@@ -6,7 +5,6 @@ function leapYear(year) {
 
 function checkFalsePositiveDates(dateString = '') {
   if (dateString.length === 10) {
-
     // massage input to use yyyy-mm-dd format
     // we support yyyy/mm/dd or yyyy.mm.dd
     const normalizedDate = dateString.replace('.', '-').replace('/', '-');
@@ -100,7 +98,7 @@ function isValidDate(dateString) {
     return false;
   }
 
-  const monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+  const monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
   // Adjust for leap years
   if (year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0)) {
@@ -119,14 +117,14 @@ var rules = {
       return false;
     }
 
-    str = String(val).replace(/\s/g, "");
+    str = String(val).replace(/\s/g, '');
     return str.length > 0 ? true : false;
   },
 
   required_if: function (val, req, attribute) {
     req = this.getParameters();
     if (this.validator._objectPath(this.validator.input, req[0]) === req[1]) {
-      return this.validator.getRule("required").validate(val);
+      return this.validator.getRule('required').validate(val);
     }
 
     return true;
@@ -135,7 +133,7 @@ var rules = {
   required_unless: function (val, req, attribute) {
     req = this.getParameters();
     if (this.validator._objectPath(this.validator.input, req[0]) !== req[1]) {
-      return this.validator.getRule("required").validate(val);
+      return this.validator.getRule('required').validate(val);
     }
 
     return true;
@@ -143,7 +141,7 @@ var rules = {
 
   required_with: function (val, req, attribute) {
     if (this.validator._objectPath(this.validator.input, req)) {
-      return this.validator.getRule("required").validate(val);
+      return this.validator.getRule('required').validate(val);
     }
 
     return true;
@@ -158,7 +156,7 @@ var rules = {
       }
     }
 
-    return this.validator.getRule("required").validate(val);
+    return this.validator.getRule('required').validate(val);
   },
 
   required_without: function (val, req, attribute) {
@@ -166,7 +164,7 @@ var rules = {
       return true;
     }
 
-    return this.validator.getRule("required").validate(val);
+    return this.validator.getRule('required').validate(val);
   },
 
   required_without_all: function (val, req, attribute) {
@@ -178,7 +176,7 @@ var rules = {
       }
     }
 
-    return this.validator.getRule("required").validate(val);
+    return this.validator.getRule('required').validate(val);
   },
 
   boolean: function (val) {
@@ -187,10 +185,10 @@ var rules = {
       val === false ||
       val === 0 ||
       val === 1 ||
-      val === "0" ||
-      val === "1" ||
-      val === "true" ||
-      val === "false"
+      val === '0' ||
+      val === '1' ||
+      val === 'true' ||
+      val === 'false'
     );
   },
 
@@ -209,7 +207,7 @@ var rules = {
   },
 
   string: function (val, req, attribute) {
-    return typeof val === "string";
+    return typeof val === 'string';
   },
 
   sometimes: function (val) {
@@ -242,10 +240,12 @@ var rules = {
 
   email: function (val) {
     // Added umlaut support https://github.com/skaterdav85/validatorjs/issues/308
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var re =
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(val)) {
       // added support domain 3-n level https://github.com/skaterdav85/validatorjs/issues/384
-      re = /^((?:[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]|[^\u0000-\u007F])+@(?:[a-zA-Z0-9]|[^\u0000-\u007F])(?:(?:[a-zA-Z0-9-]|[^\u0000-\u007F]){0,61}(?:[a-zA-Z0-9]|[^\u0000-\u007F]))?(?:\.(?:[a-zA-Z0-9]|[^\u0000-\u007F])(?:(?:[a-zA-Z0-9-]|[^\u0000-\u007F]){0,61}(?:[a-zA-Z0-9]|[^\u0000-\u007F]))?)+)*$/;
+      re =
+        /^((?:[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]|[^\u0000-\u007F])+@(?:[a-zA-Z0-9]|[^\u0000-\u007F])(?:(?:[a-zA-Z0-9-]|[^\u0000-\u007F]){0,61}(?:[a-zA-Z0-9]|[^\u0000-\u007F]))?(?:\.(?:[a-zA-Z0-9]|[^\u0000-\u007F])(?:(?:[a-zA-Z0-9-]|[^\u0000-\u007F]){0,61}(?:[a-zA-Z0-9]|[^\u0000-\u007F]))?)+)*$/;
     }
     return re.test(val);
   },
@@ -255,7 +255,7 @@ var rules = {
 
     num = Number(val); // tries to convert value to a number. useful if value is coming from form element
 
-    if (typeof num === "number" && !isNaN(num) && typeof val !== "boolean") {
+    if (typeof num === 'number' && !isNaN(num) && typeof val !== 'boolean') {
       return true;
     } else {
       return false;
@@ -315,7 +315,7 @@ var rules = {
       var localValue = val;
 
       for (i = 0; i < list.length; i++) {
-        if (typeof list[i] === "string") {
+        if (typeof list[i] === 'string') {
           localValue = String(val);
         }
 
@@ -346,7 +346,7 @@ var rules = {
     for (var i = 0; i < len; i++) {
       var localValue = val;
 
-      if (typeof list[i] === "string") {
+      if (typeof list[i] === 'string') {
         localValue = String(val);
       }
 
@@ -360,7 +360,7 @@ var rules = {
   },
 
   accepted: function (val) {
-    if (val === "on" || val === "yes" || val === 1 || val === "1" || val === true) {
+    if (val === 'on' || val === 'yes' || val === 1 || val === '1' || val === true) {
       return true;
     }
 
@@ -368,7 +368,7 @@ var rules = {
   },
 
   confirmed: function (val, req, key) {
-    var confirmedKey = key + "_confirmation";
+    var confirmedKey = key + '_confirmation';
 
     if (this.validator.input[confirmedKey] === val) {
       return true;
@@ -391,7 +391,7 @@ var rules = {
   },
 
   digits_between: function (val) {
-    var numericRule = this.validator.getRule("numeric");
+    var numericRule = this.validator.getRule('numeric');
     var req = this.getParameters();
     var valueDigitsCount = String(val).length;
     var min = parseFloat(req[0], 10);
@@ -408,9 +408,9 @@ var rules = {
     let reqPattern = req;
     var mod = /[g|i|m]{1,3}$/;
     var flag = req.match(mod);
-    flag = flag ? flag[0] : "";
+    flag = flag ? flag[0] : '';
 
-    req = req.replace(mod, "").slice(1, -1);
+    req = req.replace(mod, '').slice(1, -1);
     req = new RegExp(req, flag);
     return !!req.test(val);
   },
@@ -420,7 +420,7 @@ var rules = {
   },
 
   present: function (val) {
-    return typeof val !== "undefined";
+    return typeof val !== 'undefined';
   },
 
   after: function (val, req) {
@@ -516,27 +516,23 @@ var rules = {
   },
 
   ipv4: function (val, req, attribute) {
-    if (typeof val != 'string')
-      return false;
+    if (typeof val != 'string') return false;
 
     // regex to check that each octet is valid
     var er = /^[0-9]+$/;
     // ipv4 octets are delimited by dot
     octets = val.split('.');
     // check 1: ipv4 address should contains 4 octets
-    if (octets.length != 4)
-      return false;
+    if (octets.length != 4) return false;
 
     for (let i = 0; i < octets.length; i++) {
       const element = octets[i];
       // check 2: each octet should be integer bigger than 0
-      if (!er.test(element))
-        return false;
+      if (!er.test(element)) return false;
 
       // check 3: each octet value should be less than 256
       var octetValue = parseInt(element);
-      if (octetValue >= 256)
-        return false;
+      if (octetValue >= 256) return false;
     }
 
     // if all checks passed, we know it's valid IPv4 address!
@@ -544,8 +540,7 @@ var rules = {
   },
 
   ipv6: function (val, req, attribute) {
-    if (typeof val != 'string')
-      return false;
+    if (typeof val != 'string') return false;
 
     // regex to check that each hextet is valid
     var er = /^[0-9a-f]+$/;
@@ -554,46 +549,38 @@ var rules = {
 
     // check 1: ipv6 should contain only one consecutive colons
     colons = val.match(/::/);
-    if (colons != null && val.match(/::/g).length > 1)
-      return false;
+    if (colons != null && val.match(/::/g).length > 1) return false;
 
     // check 2: ipv6 should not be ending or starting with colon
     //          edge case: not with consecutive colons
-    if (val[0] == ':' && (colons == null || (colons != null && colons.index != 0)))
-      return false;
+    if (val[0] == ':' && (colons == null || (colons != null && colons.index != 0))) return false;
     if (val[val.length - 1] == ':' && (colons == null || (colons != null && colons.index != val.length - 2)))
       return false;
 
     // check 3: ipv6 should contain no less than 3 sector
     //         minimum ipv6 addres - ::1
-    if (3 > hextets.length)
-      return false;
+    if (3 > hextets.length) return false;
 
     // check 4: ipv6 should contain no more than 8 sectors
     //         only 1 edge case: when first or last sector is ommited
-    var isEdgeCase = (hextets.length == 9 && colons != null && (colons.index == 0 || colons.index == val.length - 2));
-    if (hextets.length > 8 && !isEdgeCase)
-      return false;
+    var isEdgeCase = hextets.length == 9 && colons != null && (colons.index == 0 || colons.index == val.length - 2);
+    if (hextets.length > 8 && !isEdgeCase) return false;
 
     // check 5: ipv6 should contain exactly one consecutive colons if it has less than 8 sectors
-    if (hextets.length != 8 && colons == null)
-      return false;
+    if (hextets.length != 8 && colons == null) return false;
 
     for (let i = 0; i < hextets.length; i++) {
       const element = hextets[i];
 
-      if (element.length == 0)
-        continue;
+      if (element.length == 0) continue;
 
       // check 6: all of hextets should contain numbers from 0 to f (in hexadecimal)
-      if (!er.test(element))
-        return false;
+      if (!er.test(element)) return false;
 
       // check 7: all of hextet values should be less then ffff (in hexadeimal)
       //          checking using length of hextet. lowest invalid value's length is 5.
       //          so all valid hextets are length of 4 or less
-      if (element.length > 4)
-        return false;
+      if (element.length > 4) return false;
     }
     return true;
   },
@@ -660,11 +647,11 @@ var rules = {
     }
 
     return val <= requirementValue;
-  }
+  },
 };
 
 var missedRuleValidator = function () {
-  throw new Error("Validator `" + this.name + "` is not defined!");
+  throw new Error('Validator `' + this.name + '` is not defined!');
 };
 var missedRuleMessage;
 
@@ -689,7 +676,7 @@ Rule.prototype = {
   validate: function (inputValue, ruleValue, attribute, callback) {
     var _this = this;
     this._setValidatingData(attribute, inputValue, ruleValue);
-    if (typeof callback === "function") {
+    if (typeof callback === 'function') {
       this.callback = callback;
       var handleResponse = function (passes, message) {
         _this.response(passes, message);
@@ -741,11 +728,11 @@ Rule.prototype = {
   getParameters: function () {
     var value = [];
 
-    if (typeof this.ruleValue === "string") {
-      value = this.ruleValue.split(",");
+    if (typeof this.ruleValue === 'string') {
+      value = this.ruleValue.split(',');
     }
 
-    if (typeof this.ruleValue === "number") {
+    if (typeof this.ruleValue === 'number') {
       value.push(this.ruleValue);
     }
 
@@ -768,7 +755,7 @@ Rule.prototype = {
       return value.length;
     }
 
-    if (typeof value === "number") {
+    if (typeof value === 'number') {
       return value;
     }
 
@@ -785,11 +772,11 @@ Rule.prototype = {
    * @return {string}
    */
   _getValueType: function () {
-    if (typeof this.inputValue === "number" || this.validator._hasNumericRule(this.attribute)) {
-      return "numeric";
+    if (typeof this.inputValue === 'number' || this.validator._hasNumericRule(this.attribute)) {
+      return 'numeric';
     }
 
-    return "string";
+    return 'string';
   },
 
   /**
@@ -821,12 +808,12 @@ Rule.prototype = {
    * @return {boolean}
    */
   isMissed: function () {
-    return typeof this.fn !== "function";
+    return typeof this.fn !== 'function';
   },
 
   get customMessage() {
     return this.isMissed() ? missedRuleMessage : this._customMessage;
-  }
+  },
 };
 
 var manager = {
@@ -843,15 +830,15 @@ var manager = {
    * @type {Array}
    */
   implicitRules: [
-    "required",
-    "required_if",
-    "required_unless",
-    "required_with",
-    "required_with_all",
-    "required_without",
-    "required_without_all",
-    "accepted",
-    "present"
+    'required',
+    'required_if',
+    'required_unless',
+    'required_with',
+    'required_with_all',
+    'required_without',
+    'required_without_all',
+    'accepted',
+    'present',
   ],
 
   /**
@@ -943,7 +930,7 @@ var manager = {
   registerMissedRuleValidator: function (fn, message) {
     missedRuleValidator = fn;
     missedRuleMessage = message;
-  }
+  },
 };
 
 module.exports = manager;

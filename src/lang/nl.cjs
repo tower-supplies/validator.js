@@ -20,11 +20,11 @@ module.exports = {
   hex: 'Het :attribute veld moet hexadecimaal zijn',
   min: {
     numeric: 'Het :attribute veld moet minstens :min zijn.',
-    string: 'Het :attribute veld moet minstens :min karakters bevatten.'
+    string: 'Het :attribute veld moet minstens :min karakters bevatten.',
   },
   max: {
     numeric: 'Het :attribute veld mag maximaal :max zijn.',
-    string: 'Het :attribute veld mag niet meer dan :max karakters bevatten.'
+    string: 'Het :attribute veld mag niet meer dan :max karakters bevatten.',
   },
   not_in: 'De gekozen waarde voor :attribute is ongeldig.',
   numeric: 'Het :attribute veld moet een getal zijn.',
@@ -39,10 +39,10 @@ module.exports = {
   same: 'De :attribute en :same velden moeten overeenkomen.',
   size: {
     numeric: 'Het :attribute veld moet :size zijn.',
-    string: 'Het :attribute veld moet :size karakters bevatten.'
+    string: 'Het :attribute veld moet :size karakters bevatten.',
   },
   string: 'Het :attribute veld moet een woord of zin zijn.',
   url: 'Het :attribute veld heeft een ongeldig formaat.',
   regex: 'Het :attribute veld heeft een ongeldig formaat.',
-  attributes: {}
+  attributes: {},
 };

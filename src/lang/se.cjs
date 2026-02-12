@@ -19,11 +19,11 @@ module.exports = {
   hex: ':attribute måste vara i hexadecimalt format',
   min: {
     numeric: ':attribute måste vara minst :min.',
-    string: ':attribute måste vara minst :min tecken.'
+    string: ':attribute måste vara minst :min tecken.',
   },
   max: {
     numeric: ':attribute får inte vara högre än :max.',
-    string: ':attribute får inte innehålla fler än :max tecken.'
+    string: ':attribute får inte innehålla fler än :max tecken.',
   },
   not_in: 'Det valda attributet :attribute är ogiltigt',
   numeric: ':attribute måste vara en siffra.',
@@ -38,10 +38,10 @@ module.exports = {
   same: ':attribute och :same måste matcha.',
   size: {
     numeric: ':attribute måste vara :size.',
-    string: ':attribute måste vara :size tecken lång.'
+    string: ':attribute måste vara :size tecken lång.',
   },
   string: ':attribute måste vara en sträng.',
   url: ':attribute formatet är ogiltigt.',
   regex: ':attribute formatet är ogiltigt.',
-  attributes: {}
+  attributes: {},
 };

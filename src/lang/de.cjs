@@ -20,11 +20,11 @@ module.exports = {
   hex: 'Das :attribute Feld sollte hexadezimal sein',
   min: {
     numeric: 'Das :attribute Feld muss mindestens :min sein.',
-    string: 'Das :attribute Feld muss mindestens :min Zeichen lang sein.'
+    string: 'Das :attribute Feld muss mindestens :min Zeichen lang sein.',
   },
   max: {
     numeric: 'Das :attribute Feld darf maximal :max sein.',
-    string: 'Das :attribute Feld darf maximal :max Zeichen haben.'
+    string: 'Das :attribute Feld darf maximal :max Zeichen haben.',
   },
   not_in: 'Der gewählte Wert für :attribute ist ungültig.',
   numeric: 'Das :attribute Feld muss eine Zahl sein.',
@@ -34,10 +34,10 @@ module.exports = {
   same: 'Die Felder :attribute und :same müssen übereinstimmen.',
   size: {
     numeric: 'Das :attribute Feld muss gleich :size sein.',
-    string: 'Das :attribute Feld muss :size Zeichen lang sein.'
+    string: 'Das :attribute Feld muss :size Zeichen lang sein.',
   },
   string: 'Das :attribute Feld muss ein Satz sein.',
   url: 'Das Format von :attribute ist ungültig.',
   regex: 'Das :attribute Format ist ungültig.',
-  attributes: {}
+  attributes: {},
 };

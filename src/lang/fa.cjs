@@ -16,11 +16,11 @@ module.exports = {
   hex: 'فیلد :attribute باید در فرمت مبنای ۱۶ باشد',
   min: {
     numeric: 'فیلد :attribute می بایست از :min بزرگتر باشد',
-    string: 'فیلد :attribute بایستی حداقل :min کاراکتر طول داشته باشد'
+    string: 'فیلد :attribute بایستی حداقل :min کاراکتر طول داشته باشد',
   },
   max: {
     numeric: 'فیلد :attribute می بایست از :max کوچکتر باشد',
-    string: 'فیلد :attribute نباید بیشتر از :max کاراکتر طول داشته باشد'
+    string: 'فیلد :attribute نباید بیشتر از :max کاراکتر طول داشته باشد',
   },
   not_in: 'فیلد :attribute انتخاب شده صحیح نمی باشد',
   numeric: 'فیلد :attribute می بایست عددی باشد',
@@ -30,10 +30,10 @@ module.exports = {
   same: 'فیلد :attribute می بایست با فیلد :same یکی باشد',
   size: {
     numeric: 'فیلد :attribute می بایست :size باشد',
-    string: 'فیلد :attribute می بایست :size کاراکتر طول داشته باشد'
+    string: 'فیلد :attribute می بایست :size کاراکتر طول داشته باشد',
   },
   string: 'فیلد :attribute می بایست متنی باشد',
   url: 'آدرس فیلد :attribute صحیح نمی باشد',
   regex: 'فرمت آدرس :attribute صحیح نمی باشد',
-  attributes: {}
+  attributes: {},
 };

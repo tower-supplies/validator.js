@@ -16,11 +16,11 @@ module.exports = {
   hex: 'The :attribute should have hexadecimal format',
   min: {
     numeric: ':attribute不能小于:min.',
-    string: ':attribute长度不能小于:min.'
+    string: ':attribute长度不能小于:min.',
   },
   max: {
     numeric: ':attribute不能大于:max.',
-    string: ':attribute长度不能大于:max.'
+    string: ':attribute长度不能大于:max.',
   },
   not_in: '所选的:attribute无效.',
   numeric: ':attribute必须是一个数字.',
@@ -30,10 +30,10 @@ module.exports = {
   same: ':attribute和:same必须一致.',
   size: {
     numeric: ':attribute必须等于:size.',
-    string: ':attribute的长度必须等于:size.'
+    string: ':attribute的长度必须等于:size.',
   },
   string: ':attribute必须是一个字符串.',
   url: ':attribute格式不正确.',
   regex: ':attribute格式不正确.',
-  attributes: {}
+  attributes: {},
 };

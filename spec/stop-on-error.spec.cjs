@@ -1,17 +1,13 @@
-import {
-  describe,
-  it,
-  expect,
-} from 'vitest';
+import { describe, it, expect } from 'vitest';
 
-const { Validator } = require("./setup.cjs");
+const { Validator } = require('./setup.cjs');
 
-describe("stopOnError tests", function() {
-  it("synchronous", function() {
-    const validator = new Validator({ email: "x" }, { email: "min:1|email" });
+describe('stopOnError tests', function () {
+  it('synchronous', function () {
+    const validator = new Validator({ email: 'x' }, { email: 'min:1|email' });
     validator.stopOnError(true);
     expect(validator.fails()).to.be.true;
-    expect(validator.errors.get("email")).to.have.length(1);
+    expect(validator.errors.get('email')).to.have.length(1);
   });
 
   // it('asynchronous', function(done) {
@@ -28,25 +24,25 @@ describe("stopOnError tests", function() {
 
   // });
 
-  it("only certain fields", function() {
-    const validator = new Validator({ email1: "x", email2: "x" }, { email1: "min:5|email", email2: "min:5|email" });
-    validator.stopOnError(["email2"]);
+  it('only certain fields', function () {
+    const validator = new Validator({ email1: 'x', email2: 'x' }, { email1: 'min:5|email', email2: 'min:5|email' });
+    validator.stopOnError(['email2']);
     expect(validator.fails()).to.be.true;
-    expect(validator.errors.get("email1")).to.have.length(2);
-    expect(validator.errors.get("email2")).to.have.length(1);
+    expect(validator.errors.get('email1')).to.have.length(2);
+    expect(validator.errors.get('email2')).to.have.length(1);
   });
 
-  it("should allow globally setting whether to stop on error", function() {
+  it('should allow globally setting whether to stop on error', function () {
     Validator.stopOnError(true);
-    const validator = new Validator({ email: "x" }, { email: "min:5|email" });
+    const validator = new Validator({ email: 'x' }, { email: 'min:5|email' });
     expect(validator.fails()).to.be.true;
-    expect(validator.errors.get("email")).to.have.length(1);
+    expect(validator.errors.get('email')).to.have.length(1);
     Validator.stopOnError(false);
   });
 
-  it("should always stop if field is implicit and cannot be validated", function() {
-    const validator = new Validator({ email: "" }, { email: "required|email" });
+  it('should always stop if field is implicit and cannot be validated', function () {
+    const validator = new Validator({ email: '' }, { email: 'required|email' });
     expect(validator.fails()).to.be.true;
-    expect(validator.errors.get("email")).to.have.length(1);
+    expect(validator.errors.get('email')).to.have.length(1);
   });
 });

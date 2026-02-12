@@ -21,8 +21,8 @@ export default defineConfig(() => ({
   test: {
     coverage: {
       enabled: true,
-      reporter: [ 'text', 'json-summary', 'html' ],
-      exclude: [ '**/spec/**/*.js' ],
+      reporter: ['text', 'json-summary', 'html'],
+      exclude: ['**/spec/**/*.js'],
       skipFull: true,
     },
     environment: 'jsdom',
@@ -38,9 +38,6 @@ export default defineConfig(() => ({
     outputFile: {
       junit: 'junit/unit.xml',
     },
-    reporters: [
-      'default',
-      'junit',
-    ],
+    reporters: ['default', 'junit'],
   },
 }));

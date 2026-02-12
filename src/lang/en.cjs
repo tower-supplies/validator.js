@@ -23,11 +23,11 @@ module.exports = {
   hex: 'The :attribute field should have hexadecimal format',
   min: {
     numeric: 'The :attribute must be at least :min.',
-    string: 'The :attribute must be at least :min characters.'
+    string: 'The :attribute must be at least :min characters.',
   },
   max: {
     numeric: 'The :attribute may not be greater than :max.',
-    string: 'The :attribute may not be greater than :max characters.'
+    string: 'The :attribute may not be greater than :max characters.',
   },
   not_in: 'The selected :attribute is invalid.',
   numeric: 'The :attribute must be a number.',
@@ -42,10 +42,10 @@ module.exports = {
   same: 'The :attribute and :same fields must match.',
   size: {
     numeric: 'The :attribute must be :size.',
-    string: 'The :attribute must be :size characters.'
+    string: 'The :attribute must be :size characters.',
   },
   string: 'The :attribute must be a string.',
   url: 'The :attribute format is invalid.',
   regex: 'The :attribute format is invalid.',
-  attributes: {}
+  attributes: {},
 };

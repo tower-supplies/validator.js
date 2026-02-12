@@ -16,11 +16,11 @@ module.exports = {
   hex: 'The :attribute should have hexadecimal format',
   min: {
     numeric: ':attribute phải lớn hơn hoặc bằng :min.',
-    string: ':attribute phải có ít nhất :min ký tự.'
+    string: ':attribute phải có ít nhất :min ký tự.',
   },
   max: {
     numeric: ':attribute phải nhỏ hơn hoặc bằng :max.',
-    string: ':attribute phải có ít hơn :max ký tự.'
+    string: ':attribute phải có ít hơn :max ký tự.',
   },
   not_in: 'Giá trị được chọn của trường :attribute không hợp lệ.',
   numeric: ':attribute phải là số.',
@@ -30,10 +30,10 @@ module.exports = {
   same: 'Giá trị của :attribute và :same phải như nhau.',
   size: {
     numeric: ':attribute phải có chiều dài của bằng :size.',
-    string: 'Số ký tự của :attribute phải là :size ký tự.'
+    string: 'Số ký tự của :attribute phải là :size ký tự.',
   },
   string: ':attribute không phải là một chuỗi',
   url: ':attribute không phải là một Url hợp lệ.',
   regex: ':attribute không đúng định dạng',
-  attributes: {}
+  attributes: {},
 };

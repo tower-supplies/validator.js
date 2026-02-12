@@ -1,51 +1,47 @@
-import {
-  describe,
-  it,
-  expect,
-} from 'vitest';
+import { describe, it, expect } from 'vitest';
 
-const { Validator } = require("./setup.cjs");
+const { Validator } = require('./setup.cjs');
 
-describe("integer pass rules", function() {
-  it("should pass if no value is entered", function() {
-    const validator = new Validator({}, { age: "integer" });
+describe('integer pass rules', function () {
+  it('should pass if no value is entered', function () {
+    const validator = new Validator({}, { age: 'integer' });
     expect(validator.fails()).to.be.false;
     expect(validator.passes()).to.be.true;
   });
 
-  it("should pass with an integer value", function() {
+  it('should pass with an integer value', function () {
     const validator = new Validator(
       {
-        age: 18
+        age: 18,
       },
       {
-        age: "integer"
+        age: 'integer',
       }
     );
     expect(validator.fails()).to.be.false;
     expect(validator.passes()).to.be.true;
   });
 
-  it("should pass with a string containing an integer value", function() {
+  it('should pass with a string containing an integer value', function () {
     const validator = new Validator(
       {
-        age: "18"
+        age: '18',
       },
       {
-        age: "integer"
+        age: 'integer',
       }
     );
     expect(validator.fails()).to.be.false;
     expect(validator.passes()).to.be.true;
   });
 
-  it("should pass with unsigned integer", function() {
+  it('should pass with unsigned integer', function () {
     const validator = new Validator(
       {
-        num: -123
+        num: -123,
       },
       {
-        num: "integer"
+        num: 'integer',
       }
     );
     expect(validator.passes()).to.be.true;
@@ -53,94 +49,94 @@ describe("integer pass rules", function() {
   });
 });
 
-describe("integer fail rules", function() {
-  it("should fail with a decimal value", function() {
+describe('integer fail rules', function () {
+  it('should fail with a decimal value', function () {
     const validator = new Validator(
       {
-        age: 18.9
+        age: 18.9,
       },
       {
-        age: "integer"
+        age: 'integer',
       }
     );
     expect(validator.fails()).to.be.true;
     expect(validator.passes()).to.be.false;
-    expect(validator.errors.first("age").message).to.equal("validation.integer");
+    expect(validator.errors.first('age').message).to.equal('validation.integer');
   });
 
-  it("should fail with a string value containing numbers and letters", function() {
+  it('should fail with a string value containing numbers and letters', function () {
     const validator = new Validator(
       {
-        age: "18d"
+        age: '18d',
       },
       {
-        age: "integer"
+        age: 'integer',
       }
     );
     expect(validator.fails()).to.be.true;
     expect(validator.passes()).to.be.false;
-    expect(validator.errors.first("age").message).to.equal("validation.integer");
+    expect(validator.errors.first('age').message).to.equal('validation.integer');
   });
 
-  it("should fail with a boolean true value", function() {
+  it('should fail with a boolean true value', function () {
     const validator = new Validator(
       {
-        age: true
+        age: true,
       },
       {
-        age: "integer"
-      }
-    );
-    expect(validator.fails()).to.be.true;
-    expect(validator.passes()).to.be.false;
-  });
-
-  it("should fail with a boolean false value", function() {
-    const validator = new Validator(
-      {
-        age: false
-      },
-      {
-        age: "integer"
+        age: 'integer',
       }
     );
     expect(validator.fails()).to.be.true;
     expect(validator.passes()).to.be.false;
   });
 
-  it("should fail if the value is an array", function() {
+  it('should fail with a boolean false value', function () {
     const validator = new Validator(
       {
-        age: []
+        age: false,
       },
       {
-        age: "required|integer"
+        age: 'integer',
       }
     );
     expect(validator.fails()).to.be.true;
     expect(validator.passes()).to.be.false;
   });
 
-  it("should fail if the value is an object", function() {
+  it('should fail if the value is an array', function () {
     const validator = new Validator(
       {
-        age: {}
+        age: [],
       },
       {
-        age: "integer"
+        age: 'required|integer',
       }
     );
     expect(validator.fails()).to.be.true;
     expect(validator.passes()).to.be.false;
   });
 
-  it("should fail with unsigned float-integer", function() {
+  it('should fail if the value is an object', function () {
     const validator = new Validator(
       {
-        num: -70.36
+        age: {},
       },
       {
-        num: "integer"
+        age: 'integer',
+      }
+    );
+    expect(validator.fails()).to.be.true;
+    expect(validator.passes()).to.be.false;
+  });
+
+  it('should fail with unsigned float-integer', function () {
+    const validator = new Validator(
+      {
+        num: -70.36,
+      },
+      {
+        num: 'integer',
       }
     );
     expect(validator.fails()).to.be.true;

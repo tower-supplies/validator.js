@@ -20,11 +20,11 @@ module.exports = {
   hex: ':attribute skal have hexadecimalt format',
   min: {
     numeric: ':attribute skal være mindst :min.',
-    string: ':attribute skal være mindst :min tegn.'
+    string: ':attribute skal være mindst :min tegn.',
   },
   max: {
     numeric: ':attribute skal være højest :max.',
-    string: ':attribute skal være højest :max tegn.'
+    string: ':attribute skal være højest :max tegn.',
   },
   not_in: 'Den valgte :attribute er ugyldig',
   numeric: ':attribute skal være et tal.',
@@ -39,10 +39,10 @@ module.exports = {
   same: ':attribute og :same skal være ens.',
   size: {
     numeric: ':attribute skal være :size.',
-    string: ':attribute skal være :size tegn lang.'
+    string: ':attribute skal være :size tegn lang.',
   },
   string: ':attribute skal være en streng.',
   url: ':attribute formatet er ugyldigt.',
   regex: ':attribute formatet er ugyldigt.',
-  attributes: {}
+  attributes: {},
 };

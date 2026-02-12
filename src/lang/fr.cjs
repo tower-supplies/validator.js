@@ -4,7 +4,7 @@ module.exports = {
   alpha_dash: 'Le champ :attribute ne peut contenir que des caractères alphanumériques, des tirets et des underscores.',
   alpha_num: 'Le champ :attribute ne peut contenir que des caractères alphanumériques.',
   between: 'La longueur du champ :attribute doit être comprise entre :min and :max.',
-  confirmed: 'Le champ :attribute n\'est pas confirmé.',
+  confirmed: "Le champ :attribute n'est pas confirmé.",
   email: 'Le champ :attribute contient un format invalide.',
   def: 'Le champ :attribute contient un attribut erroné.',
   digits: 'Le champ :attribute doit être composé de :digits chiffres.',
@@ -15,11 +15,11 @@ module.exports = {
   hex: 'Le champ :attribute doit être au format hexadécimal.',
   min: {
     numeric: 'Le champ :attribute doit être supérieur à :min.',
-    string: 'Le champ :attribute doit contenir plus de :min caractères.'
+    string: 'Le champ :attribute doit contenir plus de :min caractères.',
   },
   max: {
     numeric: 'Le champ :attribute doit être inférieur à :max.',
-    string: 'Le champ :attribute doit contenir moins de :max caractères.'
+    string: 'Le champ :attribute doit contenir moins de :max caractères.',
   },
   not_in: 'Le champ :attribute est invalide.',
   numeric: 'Le champ :attribute doit être un chiffre.',
@@ -29,9 +29,9 @@ module.exports = {
   same: 'Les champs :attribute et :same doivent correspondre.',
   size: {
     numeric: 'Le champ :attribute doit être égal à :size.',
-    string: 'Le champ :attribute doit contenir :size caractères.'
+    string: 'Le champ :attribute doit contenir :size caractères.',
   },
   url: 'Le format du champ :attribute est invalide.',
   regex: 'Le format du champ :attribute est invalide.',
-  attributes: {}
+  attributes: {},
 };

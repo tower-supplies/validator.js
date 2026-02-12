@@ -20,11 +20,11 @@ module.exports = {
   hex: ':attribute onaltılık formatta olmalı.',
   min: {
     numeric: ':attribute en az :min olmalı.',
-    string: ':attribute en az :min karakter uzunluğunda olmalı.'
+    string: ':attribute en az :min karakter uzunluğunda olmalı.',
   },
   max: {
     numeric: ':attribute en çok :max olabilir.',
-    string: ':attribute uzunluğu en çok :max karakter uzunluğunda olabilir.'
+    string: ':attribute uzunluğu en çok :max karakter uzunluğunda olabilir.',
   },
   not_in: 'Seçilen :attribute geçerli değil.',
   numeric: ':attribute sayı olmalı.',
@@ -39,10 +39,10 @@ module.exports = {
   same: ':attribute ve :same aynı olmalı.',
   size: {
     numeric: ':attribute :size olmalı.',
-    string: ':attribute :size karakter uzunluğunda olmalı.'
+    string: ':attribute :size karakter uzunluğunda olmalı.',
   },
   string: ':attribute alfa-numerik olmalı.',
   url: ':attribute formatı geçersiz.',
   regex: ':attribute formatı geçersiz.',
-  attributes: {}
+  attributes: {},
 };

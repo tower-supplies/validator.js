@@ -17,11 +17,11 @@ module.exports = {
   hex: 'Το πεδίο :attribute πρέπει να είναι σε δεκαεξαδική μορφή.',
   min: {
     numeric: 'Το πεδίο :attribute πρέπει να είναι τουλάχιστον :min.',
-    string: 'Το πεδίο :attribute πρέπει να έχει τουλάχιστον :min χαρακτήρες.'
+    string: 'Το πεδίο :attribute πρέπει να έχει τουλάχιστον :min χαρακτήρες.',
   },
   max: {
     numeric: 'Το πεδίο :attribute δεν μπορεί να είναι μεγαλύτερο από :max.',
-    string: 'Το πεδίο :attribute δεν μπορεί να έχει περισσότερους από :max χαρακτήρες.'
+    string: 'Το πεδίο :attribute δεν μπορεί να έχει περισσότερους από :max χαρακτήρες.',
   },
   not_in: 'Το επιλεγμένο :attribute δεν είναι αποδεκτό.',
   numeric: 'Το πεδίο :attribute πρέπει να είναι αριθμός.',
@@ -31,10 +31,10 @@ module.exports = {
   same: 'Τα πεδία :attribute και :same πρέπει να είναι ίδια.',
   size: {
     numeric: 'Το πεδίο :attribute πρέπει να είναι :size.',
-    string: 'Το πεδίο :attribute πρέπει να είναι :size χαρακτήρες.'
+    string: 'Το πεδίο :attribute πρέπει να είναι :size χαρακτήρες.',
   },
   string: 'Το πεδίο :attribute πρέπει να είναι αλφαριθμητικό.',
   url: 'Το πεδίο :attribute δεν είναι έγκυρη διεύθυνση URL.',
   regex: 'Η μορφή του :attribute δεν είναι αποδεκτή.',
-  attributes: {}
+  attributes: {},
 };

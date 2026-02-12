@@ -1,23 +1,19 @@
-import {
-  describe,
-  it,
-  expect,
-} from 'vitest';
+import { describe, it, expect } from 'vitest';
 
-const { Validator } = require("./setup.cjs");
+const { Validator } = require('./setup.cjs');
 
-describe("required if", function() {
-  it("should fail", function() {
-    const validator = new Validator({ desert: "icecream", flavour: "" }, { flavour: "required_if:desert,icecream" });
+describe('required if', function () {
+  it('should fail', function () {
+    const validator = new Validator({ desert: 'icecream', flavour: '' }, { flavour: 'required_if:desert,icecream' });
     expect(validator.fails()).to.be.true;
     expect(validator.passes()).to.be.false;
-    expect(validator.errors.first("flavour").message).to.equal("validation.required_if");
+    expect(validator.errors.first('flavour').message).to.equal('validation.required_if');
   });
 
-  it("should pass", function() {
+  it('should pass', function () {
     const validator = new Validator(
-      { desert: "icecream", flavour: "chocolate" },
-      { flavour: "required_if:desert,icecream" }
+      { desert: 'icecream', flavour: 'chocolate' },
+      { flavour: 'required_if:desert,icecream' }
     );
     expect(validator.passes()).to.be.true;
     expect(validator.fails()).to.be.false;

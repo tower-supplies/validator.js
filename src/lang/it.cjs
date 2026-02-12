@@ -5,7 +5,7 @@ module.exports = {
   alpha_num: 'Il campo :attribute deve essere alfanumerico.',
   between: 'Il campo :attribute deve essere compreso tra :min e :max.',
   confirmed: 'Il campo conferma :attribute non è uguale.',
-  email: 'Il formato dell\'attributo :attribute non è valido.',
+  email: "Il formato dell'attributo :attribute non è valido.",
   def: 'Gli attributi del campo :attribute contengono degli errori.',
   digits: 'Il campo :attribute deve essere di :digits cifre.',
   digits_between: 'Il campo :attribute deve essere tra :min e :max cifre.',
@@ -15,11 +15,11 @@ module.exports = {
   hex: 'Il campo :attribute deve essere in formato esadecimale',
   min: {
     numeric: 'Il campo :attribute deve essere maggiore o uguale di :min.',
-    string: 'Il campo :attribute deve essere composto da almeno :min caratteri.'
+    string: 'Il campo :attribute deve essere composto da almeno :min caratteri.',
   },
   max: {
     numeric: 'Il campo :attribute deve essere minore o uguale di :max.',
-    string: 'Il campo :attribute deve essere composto da massimo :max caratteri.'
+    string: 'Il campo :attribute deve essere composto da massimo :max caratteri.',
   },
   not_in: 'Il campo :attribute non è valido.',
   numeric: 'Il campo :attribute deve essere un numero.',
@@ -29,10 +29,10 @@ module.exports = {
   same: 'I campi :attribute e :same devono essere uguali.',
   size: {
     numeric: 'La dimensione del campo :attribute deve essere uguale a :size.',
-    string: 'Il campo :attribute deve essere di :size caratteri.'
+    string: 'Il campo :attribute deve essere di :size caratteri.',
   },
   string: 'Il campo :attribute deve essere una stringa.',
   url: 'Il formato del campo :attribute non è valido.',
   regex: 'Il formato del campo :attribute non è valido.',
-  attributes: {}
+  attributes: {},
 };

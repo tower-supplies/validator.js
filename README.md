@@ -1,12 +1,14 @@
 > ## About this fork
-> During the use of the original package we encountered unfixed bugs; behavioral quirks and use-cases we would like to 
+>
+> During the use of the original package we encountered unfixed bugs; behavioral quirks and use-cases we would like to
 > align while integrating it in our ecosystem. Forking-and-tweaking it seemed the right thing to do.
 >
 > To give an overview on our main changes:
-> * We fixed some minor bugs on date-related rules
-> * We integrated Vite & Vitest, and aligned all existing tests
-> * We replaced the original default EN-lang with a generic slug-based approach 
-> * We updated the package dependencies and changed the export style
+>
+> - We fixed some minor bugs on date-related rules
+> - We integrated Vite & Vitest, and aligned all existing tests
+> - We replaced the original default EN-lang with a generic slug-based approach
+> - We updated the package dependencies and changed the export style
 
 # validator.js
 
@@ -15,11 +17,11 @@ This library was inspired by the [Laravel framework's Validator](http://laravel.
 
 ## Why use validator.js?
 
-* Works in both the browser and Node.
-* Readable and declarative validation rules.
-* Error messages with multilingual support.
-* CommonJS/Browserify support.
-* ES6 support.
+- Works in both the browser and Node.
+- Readable and declarative validation rules.
+- Error messages with multilingual support.
+- CommonJS/Browserify support.
+- ES6 support.
 
 ## Installation
 
@@ -59,11 +61,11 @@ import Validator from '@tower-supplies/validator.js';
 let validation = new Validator(data, rules [, customErrorMessages]);
 ```
 
-__data__ {Object} - The data you want to validate
+**data** {Object} - The data you want to validate
 
-__rules__ {Object} - Validation rules
+**rules** {Object} - Validation rules
 
-__customErrorMessages__ {Object} - Optional custom error messages to return
+**customErrorMessages** {Object} - Optional custom error messages to return
 
 #### Example 1 - Passing Validation
 
@@ -71,13 +73,13 @@ __customErrorMessages__ {Object} - Optional custom error messages to return
 let data = {
   name: 'John',
   email: 'johndoe@gmail.com',
-  age: 28
+  age: 28,
 };
 
 let rules = {
   name: 'required',
   email: 'required|email',
-  age: 'min:18'
+  age: 'min:18',
 };
 
 let validation = new Validator(data, rules);
@@ -91,13 +93,16 @@ To apply validation rules to the _data_ object, use the same object key names fo
 #### Example 2 - Failing Validation
 
 ```js
-let validation = new Validator({
-  name: 'D',
-  email: 'not an email address.com'
-}, {
-  name: 'size:3',
-  email: 'required|email'
-});
+let validation = new Validator(
+  {
+    name: 'D',
+    email: 'not an email address.com',
+  },
+  {
+    name: 'size:3',
+    email: 'required|email',
+  }
+);
 
 validation.fails(); // true
 validation.passes(); // false
@@ -118,9 +123,9 @@ let data = {
     age: 28,
     education: {
       primary: 'Elementary School',
-      secondary: 'Secondary School'
-    }
-  }
+      secondary: 'Secondary School',
+    },
+  },
 };
 ```
 
@@ -133,18 +138,18 @@ let nested = {
     age: 'min:18',
     education: {
       primary: 'string',
-      secondary: 'string'
-    }
-  }
+      secondary: 'string',
+    },
+  },
 };
 
 // OR
 
 let flattened = {
-  'name': 'required',
+  name: 'required',
   'bio.age': 'min:18',
   'bio.education.primary': 'string',
-  'bio.education.secondary': 'string'
+  'bio.education.secondary': 'string',
 };
 ```
 
@@ -154,16 +159,18 @@ WildCards can also be validated.
 
 ```js
 let data = {
-  users: [{
-    name: 'John',
-    bio: {
-      age: 28,
-      education: {
-        primary: 'Elementary School',
-        secondary: 'Secondary School'
-      }
-    }
-  }]
+  users: [
+    {
+      name: 'John',
+      bio: {
+        age: 28,
+        education: {
+          primary: 'Elementary School',
+          secondary: 'Secondary School',
+        },
+      },
+    },
+  ],
 };
 ```
 
@@ -174,7 +181,7 @@ let rules = {
   'users.*.name': 'required',
   'users.*.bio.age': 'min:18',
   'users.*.bio.education.primary': 'string',
-  'users.*.bio.education.secondary': 'string'
+  'users.*.bio.education.secondary': 'string',
 };
 ```
 
@@ -214,7 +221,6 @@ The field under validation must be an array.
 
 The field under validation must be before the given date.
 
-
 #### before_or_equal:date
 
 The field under validation must be before or equal to the given date.
@@ -252,6 +258,7 @@ The given field must be different than the field under validation.
 The field under validation must be formatted as an e-mail address.
 
 #### hex
+
 The field under validation should be a hexadecimal format. Useful in combination with other rules, like `hex|size:6` for hex color code validation.
 
 #### in:foo,bar,...
@@ -283,6 +290,7 @@ The field under validation must not be included in the given list of values.
 Validate that an attribute is numeric. The string representation of a number will pass.
 
 #### present
+
 The field under validation must be present in the input data but can be empty.
 
 #### required
@@ -333,41 +341,45 @@ Validate that an attribute has a valid URL format
 
 The field under validation must match the given regular expression.
 
-**Note**: When using the ``regex`` pattern, it may be necessary to specify rules in an array instead of using pipe delimiters, especially if the regular expression contains a pipe character.
+**Note**: When using the `regex` pattern, it may be necessary to specify rules in an array instead of using pipe delimiters, especially if the regular expression contains a pipe character.
 For each backward slash that you used in your regex pattern, you must escape each one with another backward slash.
 
 #### Example 3 - Regex validation
 
 ```js
-let validation = new Validator({
-  name: 'Doe',
-  salary: '10,000.00',
-  yearOfBirth: '1980'
-}, {
-  name: 'required|size:3',
-  salary: ['required', 'regex:/^(?!0\\.00)\\d{1,3}(,\\d{3})*(\\.\\d\\d)?$/'],
-  yearOfBirth: ['required', 'regex:/^(19|20)[\\d]{2,2}$/']
-});
+let validation = new Validator(
+  {
+    name: 'Doe',
+    salary: '10,000.00',
+    yearOfBirth: '1980',
+  },
+  {
+    name: 'required|size:3',
+    salary: ['required', 'regex:/^(?!0\\.00)\\d{1,3}(,\\d{3})*(\\.\\d\\d)?$/'],
+    yearOfBirth: ['required', 'regex:/^(19|20)[\\d]{2,2}$/'],
+  }
+);
 
 validation.fails(); // false
 validation.passes(); // true
-
 ```
 
 #### Example 4 - Type Checking Validation
 
 ```js
-let validation = new Validator({
-  age: 30,
-  name: ''
-}, {
-  age: ['required', { 'in': [29, 30] }],
-  name: [{ required_if: ['age', 30] }]
-});
+let validation = new Validator(
+  {
+    age: 30,
+    name: '',
+  },
+  {
+    age: ['required', { in: [29, 30] }],
+    name: [{ required_if: ['age', 30] }],
+  }
+);
 
 validation.fails(); // true
 validation.passes(); // false
-
 ```
 
 ### Register Custom Validation Rules
@@ -376,16 +388,21 @@ validation.passes(); // false
 Validator.register(name, callbackFn, errorMessage);
 ```
 
-__name__ {String} - The name of the rule.
+**name** {String} - The name of the rule.
 
-__callbackFn__ {Function} - Returns a boolean to represent a successful or failed validation.
+**callbackFn** {Function} - Returns a boolean to represent a successful or failed validation.
 
-__errorMessage__ {String} - An optional string where you can specify a custom error message. _:attribute_ inside errorMessage will be replaced with the attribute name.
+**errorMessage** {String} - An optional string where you can specify a custom error message. _:attribute_ inside errorMessage will be replaced with the attribute name.
 
 ```js
-Validator.register('telephone', function(value, requirement, attribute) { // requirement parameter defaults to null
-  return value.match(/^\d{3}-\d{3}-\d{4}$/);
-}, 'The :attribute phone number is not in the format XXX-XXX-XXXX.');
+Validator.register(
+  'telephone',
+  function (value, requirement, attribute) {
+    // requirement parameter defaults to null
+    return value.match(/^\d{3}-\d{3}-\d{4}$/);
+  },
+  'The :attribute phone number is not in the format XXX-XXX-XXXX.'
+);
 ```
 
 ### Asynchronous Validation
@@ -393,7 +410,7 @@ Validator.register('telephone', function(value, requirement, attribute) { // req
 Register an asynchronous rule which accepts a `passes` callback:
 
 ```js
-Validator.registerAsync('username_available', function(username, attribute, req, passes) {
+Validator.registerAsync('username_available', function (username, attribute, req, passes) {
   // do your database/api checks here etc
   // then call the `passes` method where appropriate:
   passes(); // if username is available
@@ -404,11 +421,14 @@ Validator.registerAsync('username_available', function(username, attribute, req,
 Then call your validator using `checkAsync` passing `fails` and `passes` callbacks like so:
 
 ```js
-let validator = new Validator({
-	username: 'test123'
-}, {
-	username: 'required|min:3|username_available'
-});
+let validator = new Validator(
+  {
+    username: 'test123',
+  },
+  {
+    username: 'required|min:3|username_available',
+  }
+);
 
 function passes() {
   // Validation passed
@@ -419,14 +439,13 @@ function fails() {
 }
 
 validator.checkAsync(passes, fails);
-
 ```
 
 ### Error Messages
 
 This constructor will automatically generate error messages for validation rules that failed.
 
-If there are errors, the Validator instance will have its __errors__ property object populated with the error messages for all failing attributes. The methods and properties on the __errors__ property object are:
+If there are errors, the Validator instance will have its **errors** property object populated with the error messages for all failing attributes. The methods and properties on the **errors** property object are:
 
 #### .first(attribute)
 
@@ -460,11 +479,11 @@ If you need a specific error message and you don't want to override the default 
 
 ```js
 let input = {
-  name: ''
+  name: '',
 };
 
 let rules = {
-  name : 'required'
+  name: 'required',
 };
 
 let validation = new Validator(input, rules, { required: 'You forgot to give a :attribute' });
@@ -476,17 +495,17 @@ Some of the validators have string and numeric versions. You can change them too
 
 ```js
 let input = {
-  username: 'myusernameistoolong'
+  username: 'myusernameistoolong',
 };
 
 let rules = {
-  username : 'max:16'
+  username: 'max:16',
 };
 
 let validation = new Validator(input, rules, {
   max: {
-    string: 'The :attribute is too long. Max length is :max.'
-  }
+    string: 'The :attribute is too long. Max length is :max.',
+  },
 });
 validation.passes();
 validation.errors.first('username'); // returns 'The username is too long. Max length is 16.'
@@ -496,10 +515,10 @@ You can even provide error messages on a per attribute basis! Just set the messa
 
 ```js
 let input = { name: '', email: '' };
-let rules = { name : 'required', email : 'required' };
+let rules = { name: 'required', email: 'required' };
 
 let validation = new Validator(input, rules, {
-  "required.email": "Without an :attribute we can't reach you!"
+  'required.email': "Without an :attribute we can't reach you!",
 });
 
 validation.passes();
@@ -525,13 +544,13 @@ You can also configure a custom attribute formatter:
 
 ```js
 // Configure global formatter.
-Validator.setAttributeFormatter(function(attribute) {
+Validator.setAttributeFormatter(function (attribute) {
   return attribute.replace(/_/g, ' ');
 });
 
 // Or configure formatter for particular instance.
 let validator = new Validator({ first_name: '' }, { first_name: 'required' });
-validator.setAttributeFormatter(function(attribute) {
+validator.setAttributeFormatter(function (attribute) {
   return attribute.replace(/_/g, ' ');
 });
 if (validator.fails()) {
@@ -539,7 +558,7 @@ if (validator.fails()) {
 }
 ```
 
-Note: by default all _ characters will be replaced with spaces.
+Note: by default all \_ characters will be replaced with spaces.
 
 ### Language Support
 
@@ -566,7 +585,7 @@ You can also add your own custom language by calling `setMessages`:
 
 ```js
 Validator.setMessages('lang_code', {
-  required: 'The :attribute field is required.'
+  required: 'The :attribute field is required.',
 });
 ```
 

@@ -20,11 +20,11 @@ module.exports = {
   hex: ':attribute harus berformat heksadesimal',
   min: {
     numeric: ':attribute minimal :min.',
-    string: ':attribute minimal :min karakter.'
+    string: ':attribute minimal :min karakter.',
   },
   max: {
     numeric: ':attribute harus lebih kecil :max.',
-    string: ':attribute maksimal :max karakter.'
+    string: ':attribute maksimal :max karakter.',
   },
   not_in: ':attribute tidak benar.',
   numeric: ':attribute harus berupa angka.',
@@ -39,10 +39,10 @@ module.exports = {
   same: ':attribute dan :same harus sama.',
   size: {
     numeric: ':attribute harus berisi :size.',
-    string: ':attribute harus berisi :size karakter.'
+    string: ':attribute harus berisi :size karakter.',
   },
   string: ':attribute harus berupa string.',
   url: ':attribute harus berupa format url.',
   regex: ':attribute format tidak benar.',
-  attributes: {}
+  attributes: {},
 };

@@ -16,11 +16,11 @@ module.exports = {
   hex: 'El campo :attribute debe tener formato hexadecimal.',
   max: {
     numeric: 'El campo :attribute no debe ser mayor a :max.',
-    string: 'El campo :attribute no debe ser mayor que :max caracteres.'
+    string: 'El campo :attribute no debe ser mayor que :max caracteres.',
   },
   min: {
     numeric: 'El tamaño del campo :attribute debe ser de al menos :min.',
-    string: 'El campo :attribute debe contener al menos :min caracteres.'
+    string: 'El campo :attribute debe contener al menos :min caracteres.',
   },
   not_in: 'El campo :attribute es inválido.',
   numeric: 'El campo :attribute debe ser numérico.',
@@ -31,7 +31,7 @@ module.exports = {
   same: 'El campo :attribute y :other deben coincidir.',
   size: {
     numeric: 'El tamaño del campo :attribute debe ser :size.',
-    string: 'El campo :attribute debe contener :size caracteres.'
+    string: 'El campo :attribute debe contener :size caracteres.',
   },
-  url: 'El formato de :attribute es inválido.'
+  url: 'El formato de :attribute es inválido.',
 };

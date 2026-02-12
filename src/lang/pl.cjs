@@ -16,11 +16,11 @@ module.exports = {
   hex: 'The :attribute should have hexadecimal format',
   min: {
     numeric: 'Pole :attribute musi być równe conajmniej :min.',
-    string: 'Pole :attribute musi zawierać conajmniej :min znaków.'
+    string: 'Pole :attribute musi zawierać conajmniej :min znaków.',
   },
   max: {
     numeric: 'Pole :attribute nie moze być większe :max.',
-    string: 'Pole :attribute nie moze być dłuższe niż :max znaków.'
+    string: 'Pole :attribute nie moze być dłuższe niż :max znaków.',
   },
   not_in: 'Pole :attribute nie może należeć do zbioru :not_in.',
   numeric: 'Pole :attribute musi być liczbą.',
@@ -30,10 +30,10 @@ module.exports = {
   same: 'Pola :attribute i :same muszą być takie same.',
   size: {
     numeric: 'Pole :attribute musi być równe :size.',
-    string: 'Pole :attribute musi zawierać :size znaków.'
+    string: 'Pole :attribute musi zawierać :size znaków.',
   },
   string: 'Pole :attribute musi być ciągiem znaków.',
   url: 'Pole :attribute musi być poprawnym adresem URL.',
   regex: 'Pole :attribute nie spełnia warunku.',
-  attributes: {}
+  attributes: {},
 };

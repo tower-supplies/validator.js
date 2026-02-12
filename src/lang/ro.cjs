@@ -20,11 +20,11 @@ module.exports = {
   hex: 'Câmpul :attribute trebuie să aibă format hexazecimal.',
   min: {
     numeric: ':attribute trebuie să fie mai mare de :min.',
-    string: ':attribute trebuie să contină cel puțin :min caractere.'
+    string: ':attribute trebuie să contină cel puțin :min caractere.',
   },
   max: {
     numeric: ':attribute nu trebuie să fie mai mare de :max.',
-    string: ':attribute poate să contină maxim :max caractere.'
+    string: ':attribute poate să contină maxim :max caractere.',
   },
   not_in: ':attribute selectat nu este valid.',
   numeric: ':attribute trebuie sa fie un număr.',
@@ -39,10 +39,10 @@ module.exports = {
   same: 'Câmpurile :attribute și :same trebuie să fie egale.',
   size: {
     numeric: ':attribute trebuie să fie :size.',
-    string: ':attribute trebuie să contina :size caractere.'
+    string: ':attribute trebuie să contina :size caractere.',
   },
   string: ':attribute trebuie să fie un contina doar caractere alfabetice.',
   url: 'Formatul :attribute nu este valid.',
   regex: 'Formatul :attribute nu este valid.',
-  attributes: {}
+  attributes: {},
 };

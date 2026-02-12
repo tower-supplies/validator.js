@@ -21,7 +21,6 @@ var Validator = function (input, rules, customMessages) {
 };
 
 Validator.prototype = {
-
   constructor: Validator,
 
   /**
@@ -198,7 +197,10 @@ Validator.prototype = {
       return obj[path];
     }
 
-    var keys = path.replace(/\[(\w+)\]/g, '.$1').replace(/^\./, '').split('.');
+    var keys = path
+      .replace(/\[(\w+)\]/g, '.$1')
+      .replace(/^\./, '')
+      .split('.');
     var copy = {};
     for (var attr in obj) {
       if (Object.prototype.hasOwnProperty.call(obj, attr)) {
@@ -223,19 +225,15 @@ Validator.prototype = {
    * @return {object}
    */
   _parseRules: function (rules) {
-
     var parsedRules = {};
     rules = this._flattenObject(rules);
 
     for (var attribute in rules) {
-
       var rulesArray = rules[attribute];
 
       this._parseRulesCheck(attribute, rulesArray, parsedRules);
     }
     return parsedRules;
-
-
   },
 
   _parseRulesCheck: function (attribute, rulesArray, parsedRules, wildCardValues) {
@@ -287,14 +285,13 @@ Validator.prototype = {
   },
 
   _replaceWildCards: function (path, nums) {
-
     if (!nums) {
       return path;
     }
 
     var path2 = path;
     nums.forEach(function (value) {
-      if(Array.isArray(path2)){
+      if (Array.isArray(path2)) {
         path2 = path2[0];
       }
       const pos = path2.indexOf('*');
@@ -303,7 +300,7 @@ Validator.prototype = {
       }
       path2 = path2.substr(0, pos) + value + path2.substr(pos + 1);
     });
-    if(Array.isArray(path)){
+    if (Array.isArray(path)) {
       path[0] = path2;
       path2 = path;
     }
@@ -336,7 +333,7 @@ Validator.prototype = {
         for (var rule in rulesArray[i]) {
           rules.push({
             name: rule,
-            value: rulesArray[i][rule]
+            value: rulesArray[i][rule],
           });
         }
       } else {
@@ -431,7 +428,6 @@ Validator.prototype = {
    * @return {boolean}
    */
   _shouldStopValidating: function (attribute, rulePassed) {
-
     var stopOnAttributes = this.stopOnAttributes;
     if (typeof stopOnAttributes === 'undefined' || stopOnAttributes === false || rulePassed === true) {
       return false;
@@ -526,8 +522,7 @@ Validator.prototype = {
     }
 
     return this.hasAsync || hasCallback;
-  }
-
+  },
 };
 
 /**
@@ -656,7 +651,7 @@ Validator.registerAsyncImplicit = function (name, fn, message) {
  * @param  {string}   message
  * @return {void}
  */
-Validator.registerMissedRuleValidator = function(fn, message) {
+Validator.registerMissedRuleValidator = function (fn, message) {
   Rules.registerMissedRuleValidator(fn, message);
 };
 

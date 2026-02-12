@@ -11,16 +11,16 @@ module.exports = {
   digits: 'El camp :attribute pot tindre :digits dígitos.',
   digits_between: 'El camp  :attribute ha de tenir entre :min i :max dígits.',
   email: 'El camp :attribute no es un correu válido.',
-  'in': 'El camp :attribute es invàlid.',
+  in: 'El camp :attribute es invàlid.',
   integer: 'El camp :attribute pot ser un nombre enter.',
   hex: 'El camp :attribute hauria de tenir format hexadecimal',
   max: {
     numeric: 'El camp :attribute no pot ser mayor a :max.',
-    string: 'El camp :attribute no pot ser mayor que :max caràcters.'
+    string: 'El camp :attribute no pot ser mayor que :max caràcters.',
   },
   min: {
     numeric: 'La mida del camp :attribute pot ser de al menys :min.',
-    string: 'El camp :attribute pot contenir al menys :min caràcters.'
+    string: 'El camp :attribute pot contenir al menys :min caràcters.',
   },
   not_in: 'El camp :attribute es invàlid.',
   numeric: 'El camp :attribute pot ser numéric.',
@@ -31,7 +31,7 @@ module.exports = {
   same: 'El camp :attribute y :other poden coincidir.',
   size: {
     numeric: 'La mida del camp :attribute pot ser :size.',
-    string: 'El camp :attribute pot contenir :size caràcters.'
+    string: 'El camp :attribute pot contenir :size caràcters.',
   },
-  url: 'El format de :attribute es invàlid.'
+  url: 'El format de :attribute es invàlid.',
 };

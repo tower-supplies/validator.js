@@ -4,7 +4,6 @@ const Messages = require('./messages.cjs');
 const require_method = require;
 
 const container = {
-
   messages: {},
 
   /**
@@ -14,7 +13,7 @@ const container = {
    * @param {object} rawMessages
    * @return {void}
    */
-  _set: function(lang, rawMessages) {
+  _set: function (lang, rawMessages) {
     this.messages[lang] = rawMessages;
   },
 
@@ -26,7 +25,7 @@ const container = {
    * @param {string|object} message
    * @return {void}
    */
-  _setRuleMessage: function(lang, attribute, message) {
+  _setRuleMessage: function (lang, attribute, message) {
     this._load(lang);
     if (message === undefined) {
       message = this.messages[lang].def;
@@ -41,7 +40,7 @@ const container = {
    * @param  {string} lang
    * @return {void}
    */
-  _load: function(lang) {
+  _load: function (lang) {
     if (Util.isGenericLang(lang)) {
       this._set(lang, require('./lang/slugs.cjs'));
 
@@ -62,7 +61,7 @@ const container = {
    * @param  {string} lang
    * @return {object}
    */
-  _get: function(lang) {
+  _get: function (lang) {
     this._load(lang);
     return this.messages[lang];
   },
@@ -73,11 +72,10 @@ const container = {
    * @param  {string} lang
    * @return {Messages}
    */
-  _make: function(lang) {
+  _make: function (lang) {
     this._load(lang);
     return new Messages(lang, this.messages[lang]);
-  }
-
+  },
 };
 
 module.exports = container;

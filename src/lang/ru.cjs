@@ -15,11 +15,11 @@ module.exports = {
   hex: 'Поле :attribute должно иметь шестнадцатеричный формат',
   min: {
     numeric: 'Значение поля :attribute должно быть больше или равно :min.',
-    string: 'Количество символов в поле :attribute должно быть не менее :min.'
+    string: 'Количество символов в поле :attribute должно быть не менее :min.',
   },
   max: {
     numeric: 'Значение поля :attribute должно быть меньше или равно :max.',
-    string: 'Количество символов в поле :attribute не может превышать :max.'
+    string: 'Количество символов в поле :attribute не может превышать :max.',
   },
   not_in: 'Выбранное значение для :attribute ошибочно.',
   numeric: 'Поле :attribute должно быть числом.',
@@ -29,9 +29,9 @@ module.exports = {
   same: 'Значение :attribute должно совпадать с :same.',
   size: {
     numeric: 'Значение поля :attribute должно быть равным :size.',
-    string: 'Количество символов в поле :attribute должно быть равно :size.'
+    string: 'Количество символов в поле :attribute должно быть равно :size.',
   },
   url: 'Поле :attribute должно содержать валидный URL.',
   regex: 'Неверный формат поля :attribute.',
-  attributes: {}
+  attributes: {},
 };

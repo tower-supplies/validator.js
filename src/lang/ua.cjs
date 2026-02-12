@@ -15,23 +15,23 @@ module.exports = {
   hex: 'Значення поля :attribute повинно бути шістнадцяткового формату',
   min: {
     numeric: 'Значення поля :attribute повинно бути більшим або рівним :min.',
-    string: 'Кількість символів в полі :attribute повинна бути не менше :min.'
+    string: 'Кількість символів в полі :attribute повинна бути не менше :min.',
   },
   max: {
     numeric: 'Значення поля :attribute повинно бути менше або рівне :max.',
-    string: 'Кількість символів в полі :attribute не може превищувати :max.'
+    string: 'Кількість символів в полі :attribute не може превищувати :max.',
   },
   not_in: 'Обране значення для :attribute помилкове.',
   numeric: 'Значення поля :attribute повинно бути числом.',
   present: 'Поле :attribute повинно бути присутнім (але може бути пустим).',
-  required: 'Поле :attribute обов\'язкове для заповнення.',
+  required: "Поле :attribute обов'язкове для заповнення.",
   required_if: 'Поле :attribute потрібне у випадку коли значення поля :other рівне :value.',
   same: 'Значеня поля :attribute повинно співпадати з :same.',
   size: {
     numeric: 'Значення поля :attribute повинно бути рівним :size.',
-    string: 'Кількість символів в полі :attribute повинна бути рівною :size.'
+    string: 'Кількість символів в полі :attribute повинна бути рівною :size.',
   },
   url: 'Поле :attribute повинне містити валідний URL.',
   regex: 'Неправильний формат значення :attribute.',
-  attributes: {}
+  attributes: {},
 };

@@ -39,11 +39,11 @@ module.exports = {
   },
   min: {
     numeric: 'validation.min.numeric',
-    string: 'validation.min.string'
+    string: 'validation.min.string',
   },
   max: {
     numeric: 'validation.max.numeric',
-    string: 'validation.max.string'
+    string: 'validation.max.string',
   },
   not_in: 'validation.not_in',
   nullable: 'validation.nullable',
@@ -59,10 +59,10 @@ module.exports = {
   same: 'validation.same',
   size: {
     numeric: 'validation.size.numeric',
-    string: 'validation.size.string'
+    string: 'validation.size.string',
   },
   string: 'validation.string',
   url: 'validation.url',
   regex: 'validation.regex',
-  attributes: {}
+  attributes: {},
 };

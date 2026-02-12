@@ -1,9 +1,8 @@
-var Errors = function() {
+var Errors = function () {
   this.errors = {};
 };
 
 Errors.prototype = {
-
   constructor: Errors,
 
   /**
@@ -13,7 +12,7 @@ Errors.prototype = {
    * @param  {string} message
    * @return {void}
    */
-  add: function(attribute, message) {
+  add: function (attribute, message) {
     if (!this.has(attribute)) {
       this.errors[attribute] = [];
     }
@@ -29,7 +28,7 @@ Errors.prototype = {
    * @param  {string} attribute A key in the data object being validated
    * @return {array} An array of error messages
    */
-  get: function(attribute) {
+  get: function (attribute) {
     if (this.has(attribute)) {
       return this.errors[attribute];
     }
@@ -43,7 +42,7 @@ Errors.prototype = {
    * @param  {string} attribute A key in the data object being validated
    * @return {string|false} First error message or false
    */
-  first: function(attribute) {
+  first: function (attribute) {
     if (this.has(attribute)) {
       return this.errors[attribute][0];
     }
@@ -56,7 +55,7 @@ Errors.prototype = {
    *
    * @return {Object} Failed attribute names for keys and an array of messages for values
    */
-  all: function() {
+  all: function () {
     return this.errors;
   },
 
@@ -66,13 +65,13 @@ Errors.prototype = {
    * @param  {string}  attribute A key in the data object being validated
    * @return {boolean}
    */
-  has: function(attribute) {
+  has: function (attribute) {
     if (Object.prototype.hasOwnProperty.call(this.errors, attribute)) {
       return true;
     }
 
     return false;
-  }
+  },
 };
 
 module.exports = Errors;

@@ -20,11 +20,11 @@ module.exports = {
   hex: ':attribute on oltava heksadesimaali.',
   min: {
     numeric: ':attribute on oltava vähintään :min.',
-    string: ':attribute on oltava vähintään :min merkkiä pitkä.'
+    string: ':attribute on oltava vähintään :min merkkiä pitkä.',
   },
   max: {
     numeric: ':attribute on oltava enintään :max.',
-    string: ':attribute on oltava enintään :max merkkiä pitkä.'
+    string: ':attribute on oltava enintään :max merkkiä pitkä.',
   },
   not_in: 'Valittu :attribute ei kelpaa.',
   numeric: ':attribute on oltava numero.',
@@ -39,10 +39,10 @@ module.exports = {
   same: ':attribute ja :same on oltava samat.',
   size: {
     numeric: ':attribute on oltava :size.',
-    string: ':attribute on oltava :size merkkiä pitkä.'
+    string: ':attribute on oltava :size merkkiä pitkä.',
   },
   string: ':attribute on oltava merkkijono.',
   url: ':attribute on väärässä muodossa.',
   regex: ':attribute on väärässä muodossa.',
-  attributes: {}
+  attributes: {},
 };

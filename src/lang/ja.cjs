@@ -9,7 +9,7 @@ module.exports = {
   before_or_equal: ':attributeは:before_or_equal以前の日付を入力してください。',
   between: {
     numeric: ':attributeは:min〜:maxの間で指定してください',
-    string: ':attributeは:min〜:max文字を入力してください'
+    string: ':attributeは:min〜:max文字を入力してください',
   },
   confirmed: ':attributeは確認が一致しません。',
   email: ':attributeは正しいメールアドレスを入力してください。',
@@ -23,11 +23,11 @@ module.exports = {
   hex: ':attributeは16進数で入力してください。',
   min: {
     numeric: ':attributeは:min以上で入力してください。',
-    string: ':attributeは:min文字以上で入力してください。'
+    string: ':attributeは:min文字以上で入力してください。',
   },
   max: {
     numeric: ':attributeは:max以下で入力してください。',
-    string: ':attributeは:max文字以下で入力してください。'
+    string: ':attributeは:max文字以下で入力してください。',
   },
   not_in: '選択された:attributeは無効です。',
   numeric: ':attributeは数値で入力してください。',
@@ -42,10 +42,10 @@ module.exports = {
   same: ':attributeと:sameは同じでなければなりません。',
   size: {
     numeric: ':attributeは:sizeを入力してください。',
-    string: ':attributeは:size文字で入力してください。'
+    string: ':attributeは:size文字で入力してください。',
   },
   string: ':attributeは文字のみで入力してください。',
   url: ':attributeは正しいURIを入力してください。',
   regex: ':attributeの値はパターンにマッチする必要があります。',
-  attributes: {}
+  attributes: {},
 };

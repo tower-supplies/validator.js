@@ -54,16 +54,16 @@
     "laravel-validator-for-js"
   ],
   "devDependencies": {
-    "@types/node": "^18.11.18",
+    "@types/node": "^25.2.3",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.50.0",
-    "@vitest/coverage-c8": "^0.33.0",
+    "@vitest/coverage-v8": "^4.0.18",
     "eslint": "^8.25.0",
     "eslint-plugin-import": "^2.27.4",
     "jsdom": "^21.0.0",
     "typescript": "^4.9.5",
     "vite": "^7.3.1",
-    "vitest": "^4.0.17"
+    "vitest": "^4.0.18"
   },
   "scripts": {
     "dev": "vite",
